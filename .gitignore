@@ -1,0 +1,7 @@
+/.metadata/
+*.fastq
+*.fasta
+*.sam
+*.bam
+*.bai
+*.iit
