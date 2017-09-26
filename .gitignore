@@ -6,5 +6,5 @@ AiptasiaGmapDb/
 *.fasta
 *.sam
 *.bam
-*.bai
 *.iit
+*.bai
