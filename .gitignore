@@ -1,4 +1,7 @@
+trinity_out_dir/
+AiptasiaGmapDb/
 /.metadata/
+/.DS_Store
 *.fastq
 *.fasta
 *.sam
