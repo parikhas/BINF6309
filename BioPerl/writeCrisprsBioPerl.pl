@@ -13,12 +13,12 @@ my $outputfile = '';
 my $usage      = "\n$0 [options]\n
 
 Options:
-	-inputfile		inputfile reads
+	-fastaIn	inputfile reads
 	-help		Show this message
 \n";
 
 GetOptions(
-	'fastaIn =s'   => \$fastaIn,
+	'fastaIn=s'   => \$fastaIn,
 	'outputfile=s' => \$outputfile,
 	help           => sub { pod2usage($usage); },
 ) or pod2usage(2);
