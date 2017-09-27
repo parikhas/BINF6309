@@ -8,7 +8,7 @@ use Getopt::Long;
 use Pod::Usage;
 
 #GLOBALS
-my $inputfile  = '';
+my $fastaIn    = '';
 my $outputfile = '';
 my $usage      = "\n$0 [options]\n
 
@@ -18,17 +18,17 @@ Options:
 \n";
 
 GetOptions(
-	'inputfile=s'  => \$inputfile,
+	'fastaIn =s'   => \$fastaIn,
 	'outputfile=s' => \$outputfile,
 	help           => sub { pod2usage($usage); },
 ) or pod2usage(2);
 
-unless ( $inputfile and $outputfile ) {
-	unless ($inputfile) {
+unless ( -e $fastaIn and $outputfile ) {
+	unless ( -e $fastaIn ) {
 		print "Specify file for input\n";
 	}
 
-	unless ($outputfile) {
+	unless ( -e $outputfile ) {
 		print "Specify file for output\n";
 	}
 
@@ -37,7 +37,7 @@ unless ( $inputfile and $outputfile ) {
 
 #uses bioperl to read the input file
 my $seqio_obj_in = Bio::SeqIO->new(
-	-file   => "$inputfile",
+	-file   => "$fastaIn",
 	-format => "fasta"
 );
 
