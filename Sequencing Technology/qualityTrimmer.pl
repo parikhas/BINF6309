@@ -28,11 +28,11 @@ GetOptions(
 	help            => sub { pod2usage($usage); },
 ) or pod2usage(2);
 
-unless ( $left and $right and $qual and $interleaved ) {
-	unless ($left) {
+unless ( -e $left and -e $right and $qual and $interleaved ) {
+	unless ( -e $left) {
 		print "Specify file for left reads\n";
 	}
-	unless ($right) {
+	unless ( -e $right) {
 		print "Specify file for right reads\n";
 	}
 	unless ($interleaved) {
