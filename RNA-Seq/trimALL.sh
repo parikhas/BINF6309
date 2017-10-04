@@ -1,13 +1,12 @@
 #!/bin/bash
 fastqPath="/scratch/AiptasiaMiSeq/fastq/"
-trimPath="/home/BINF6309/RNA-Seq/Trimmed/"
+trimpath="Trimmed/"
 for f1 in $fastqPath*.R1.fastq
 do
 	f2=$(echo $f1 | cut -d'.' -f1)
 	numOcc=$(tr -dc '/' <<<"$f2" | awk '{ print length; }')
 	((numOcc ++))
 	f3=$(echo $f2 |cut -d'/' -f$numOcc)
-	echo \
 	nice -n 19 java -jar /usr/local/programs/Trimmomatic-0.36/trimmomatic-0.36.jar PE \
 	-threads 1 -phred33 \
 	$fastqPath$f3.R1.fastq \
