@@ -1,10 +1,4 @@
-trinity_out_dir/
-AiptasiaGmapDb/
-/.metadata/
-/.DS_Store
-*.fastq
-*.fasta
-*.sam
-*.bam
-*.iit
-*.bai
+*.*
+!*.sh
+!*.pl
+!.gitignore

@@ -1,27 +1,27 @@
-GSNAP version 2017-09-11 called with args: gsnap.sse42 -A sam -s AiptasiaGmapIIT.iit -D . -d AiptasiaGmapDb Aip02.R1.paired.fastq Aip02.R2.paired.fastq
+GSNAP version 2017-09-11 called with args: gsnap.sse42 -A sam -s AiptasiaGmapIIT.iit -D . -d AiptasiaGmapDb Trimmed/Aip02.R1.paired.fastq Trimmed/Aip02.R2.paired.fastq
 Known splicing (-s) turned on => assume reads are RNA-Seq
 Checking compiler assumptions for SSE2: 6B8B4567 327B23C6 xor=59F066A1
 Checking compiler assumptions for SSE4.1: -103 -58 max=198 => compiler zero extends
 Checking compiler assumptions for SSE4.2 options: 6B8B4567 __builtin_clz=1 __builtin_ctz=0 _mm_popcnt_u32=17 __builtin_popcount=17 
 Finished checking compiler assumptions
-Allocating memory for compressed genome (oligos)...Attached new memory for ./AiptasiaGmapDb/AiptasiaGmapDb.genomecomp...done (96,049,620 bytes, 0.09 sec)
-Allocating memory for compressed genome (bits)...Attached new memory for ./AiptasiaGmapDb/AiptasiaGmapDb.genomebits128...done (96,049,632 bytes, 0.08 sec)
+Allocating memory for compressed genome (oligos)...Attached existing memory for ./AiptasiaGmapDb/AiptasiaGmapDb.genomecomp...done (96,049,620 bytes, 0.00 sec)
+Allocating memory for compressed genome (bits)...Attached existing memory for ./AiptasiaGmapDb/AiptasiaGmapDb.genomebits128...done (96,049,632 bytes, 0.00 sec)
 Pre-loading suffix array......done (1,024,529,188 bytes, 0.08 sec)
-Allocating memory for indexij ptrs...Attached new memory for ./AiptasiaGmapDb/AiptasiaGmapDb.saindex64meta...done (4,194,312 bytes, 0.00 sec)
-Allocating memory for indexij comp...Attached new memory for ./AiptasiaGmapDb/AiptasiaGmapDb.saindex64strm...done (27,054,736 bytes, 0.03 sec)
-Pre-loading LCP/child/DC arrays......done (640,330,745 bytes, 0.18 sec)
-Allocating memory for lcp guide...Attached new memory for ./AiptasiaGmapDb/AiptasiaGmapDb.salcpguide1024...done (1,000,524 bytes, 0.00 sec)
-Allocating memory for lcp exceptions...Attached new memory for ./AiptasiaGmapDb/AiptasiaGmapDb.salcpexc...done (355,090,288 bytes, 0.30 sec)
-Allocating memory for child guide...Attached new memory for ./AiptasiaGmapDb/AiptasiaGmapDb.sachildguide1024...done (1,000,524 bytes, 0.00 sec)
-Allocating memory for child exceptions...Attached new memory for ./AiptasiaGmapDb/AiptasiaGmapDb.sachildexc...done (8,106,128 bytes, 0.01 sec)
+Allocating memory for indexij ptrs...Attached existing memory for ./AiptasiaGmapDb/AiptasiaGmapDb.saindex64meta...done (4,194,312 bytes, 0.00 sec)
+Allocating memory for indexij comp...Attached existing memory for ./AiptasiaGmapDb/AiptasiaGmapDb.saindex64strm...done (27,054,736 bytes, 0.00 sec)
+Pre-loading LCP/child/DC arrays......done (640,330,745 bytes, 0.38 sec)
+Allocating memory for lcp guide...Attached existing memory for ./AiptasiaGmapDb/AiptasiaGmapDb.salcpguide1024...done (1,000,524 bytes, 0.00 sec)
+Allocating memory for lcp exceptions...Attached existing memory for ./AiptasiaGmapDb/AiptasiaGmapDb.salcpexc...done (355,090,288 bytes, 0.00 sec)
+Allocating memory for child guide...Attached existing memory for ./AiptasiaGmapDb/AiptasiaGmapDb.sachildguide1024...done (1,000,524 bytes, 0.00 sec)
+Allocating memory for child exceptions...Attached existing memory for ./AiptasiaGmapDb/AiptasiaGmapDb.sachildexc...done (8,106,128 bytes, 0.00 sec)
 Looking for index files in directory ./AiptasiaGmapDb
   Pointers file is AiptasiaGmapDb.ref153offsets64meta
   Offsets file is AiptasiaGmapDb.ref153offsets64strm
   Positions file is AiptasiaGmapDb.ref153positions
 Offsets compression type: bitpack64
-Allocating memory for ref offset pointers, kmer 15, interval 3...Attached new memory for ./AiptasiaGmapDb/AiptasiaGmapDb.ref153offsets64meta...done (134,217,744 bytes, 0.11 sec)
-Allocating memory for ref offsets, kmer 15, interval 3...Attached new memory for ./AiptasiaGmapDb/AiptasiaGmapDb.ref153offsets64strm...done (229,930,016 bytes, 0.20 sec)
-Allocating memory for ref positions, kmer 15, interval 3...Attached new memory for ./AiptasiaGmapDb/AiptasiaGmapDb.ref153positions...done (269,500,660 bytes, 0.26 sec)
+Allocating memory for ref offset pointers, kmer 15, interval 3...Attached existing memory for ./AiptasiaGmapDb/AiptasiaGmapDb.ref153offsets64meta...done (134,217,744 bytes, 0.00 sec)
+Allocating memory for ref offsets, kmer 15, interval 3...Attached existing memory for ./AiptasiaGmapDb/AiptasiaGmapDb.ref153offsets64strm...done (229,930,016 bytes, 0.00 sec)
+Allocating memory for ref positions, kmer 15, interval 3...Attached existing memory for ./AiptasiaGmapDb/AiptasiaGmapDb.ref153positions...done (269,500,660 bytes, 0.00 sec)
 Reading splicing file AiptasiaGmapIIT.iit locally...no donor or acceptor tags found, so treating as introns file
 416674 unique splicesites...
 Non-standard nucleotide N near splice site LJWW01000001.1:1.  Discarding...
@@ -20229,15 +20229,15 @@ Non-standard nucleotide N near splice site LJWW01004312.1:432537.  Discarding...
 396472 splicesites are valid...splicetrie_obs has 1014784 entries...done
 GMAP modes: pairsearch, segments, improvement
 Starting alignment
-Processed 31478 queries in 91.33 seconds (344.66 queries/sec)
-Removed existing memory for shmid 5701643
-Removed existing memory for shmid 5668874
-Removed existing memory for shmid 5636105
-Removed existing memory for shmid 5439491
-Removed existing memory for shmid 5472260
-Removed existing memory for shmid 5505029
-Removed existing memory for shmid 5537798
-Removed existing memory for shmid 5570567
-Removed existing memory for shmid 5603336
-Removed existing memory for shmid 5406722
-Removed existing memory for shmid 5373953
+Processed 31478 queries in 402.92 seconds (78.12 queries/sec)
+Keeping memory for shmid 12058635 resident, because it is being used by 23 processes
+Keeping memory for shmid 12025866 resident, because it is being used by 23 processes
+Keeping memory for shmid 11993097 resident, because it is being used by 23 processes
+Keeping memory for shmid 11796483 resident, because it is being used by 23 processes
+Keeping memory for shmid 11829252 resident, because it is being used by 23 processes
+Keeping memory for shmid 11862021 resident, because it is being used by 23 processes
+Keeping memory for shmid 11894790 resident, because it is being used by 23 processes
+Keeping memory for shmid 11927559 resident, because it is being used by 23 processes
+Keeping memory for shmid 11960328 resident, because it is being used by 23 processes
+Keeping memory for shmid 11763714 resident, because it is being used by 23 processes
+Keeping memory for shmid 11730945 resident, because it is being used by 23 processes
