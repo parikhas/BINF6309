@@ -1,4 +1,7 @@
 *.*
 !*.sh
 !*.pl
+!*.csv
 !.gitignore
+!*.xprs
+!*.matrix
