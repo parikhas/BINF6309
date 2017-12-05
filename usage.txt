@@ -1,0 +1,10 @@
+605M	./.git
+5.3M	./BioPerl
+12K	./Hello Git
+20K	./HelloGit
+4.0K	./RemoteSystemsTempFiles
+12K	./Sequencing Technology
+7.4G	./RNA-Seq
+1.4G	./GenomeAssembly
+0	./VariantCalling
+9.4G	.
