@@ -1,2 +1,2 @@
-# BINF6308
-Assignments for BINF6308
+# BINF6309
+Assignments for BINF6309
