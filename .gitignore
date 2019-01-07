@@ -10,3 +10,4 @@
 !*.html
 .Rproj.user
 !*.RProj
+!*.txt
