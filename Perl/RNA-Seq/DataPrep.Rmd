@@ -1,0 +1,82 @@
+---
+title: "DESeq2DataPrep"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+spAnnot<-read.delim("proteinGeneGo.txt", sep="\t", header=F)
+head(spAnnot)
+```
+
+
+
+```{r}
+colnames(spAnnot) = c("Gene", "Protein", "GeneDesc", "GO")
+head(spAnnot)
+```
+
+
+```{r}
+geneDesc <- subset(spAnnot, select=c(Gene, GeneDesc))
+geneDesc <- unique(geneDesc)
+```
+```{r}
+rownames(geneDesc) = make.names(geneDesc$Gene, unique=TRUE)
+geneDesc <- subset(geneDesc, select=c(GeneDesc))
+head(geneDesc)
+```
+```{r}
+rawCounts <- read.csv("mergedClcCounts.csv", row.names=1)
+head(rawCounts)
+```
+```{r}
+#Get the column names
+uglyColumns=colnames(rawCounts)
+#Replace column names using Aipnn format.
+uglyColumns=gsub('GE_CC',"Aip",uglyColumns)
+uglyColumns=gsub('GE_MC',"Aip",uglyColumns)
+uglyColumns=gsub('GE_CV',"Aip",uglyColumns)
+prettyColumns=gsub('GE_MV',"Aip",uglyColumns)
+#Clean up objects when you are done with them to make it easier to find the variables
+#of interest in the Environment pane of RStudio.
+rm(uglyColumns)
+#Assign the new column names to the table
+colnames(rawCounts) <- prettyColumns
+#Done witb prettyColumns now so remove
+rm(prettyColumns)
+#Display with head
+head(rawCounts)
+```
+```{r}
+rawCounts <- rawCounts[ , order(names(rawCounts))]
+head(rawCounts)
+```
+```{r}
+#Read in Samples.csv downloaded from Blackboard
+colData <- read.csv("Samples.csv", row.names=1)
+#Display the whole table
+colData
+```
+```{r}
+colData$Menthol <- gsub("Control","NoMenthol",colData$Menthol)
+colData$Vibrio <- gsub("Control","NoVibrio",colData$Vibrio)
+colData
+```
+```{r}
+colData <- colData[with(colData, order(row.names(colData))), ]
+colData
+```
+```{r}
+#Save session data to load in next script.
+save.image("clcCountsBlast2GoAnnotations.RData")
+```
